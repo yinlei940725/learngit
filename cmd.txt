@@ -1,1 +1,102 @@
 Git 操作命令
+
+一、Git的安装
+
+	1、安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
+
+	2、安装完成后，还需要最后一步设置，在命令行输入：
+
+	$ git config --global user.name "Your Name"
+	$ git config --global user.email "email@example.com"
+
+二、创建版本库
+
+	1、选择一个合适的地方，创建一个空目录：
+
+	$ mkdir learngit
+	$ cd learngit
+	$ pwd
+	/Users/michael/learngit
+	
+	pwd命令用于显示当前目录。
+	
+	2、第二步，通过git init命令把这个目录变成Git可以管理的仓库：
+
+	$ git init
+	Initialized empty Git repository in /Users/michael/learngit/.git/
+	
+	3、在learngit目录下（子目录也行）创建文件 yinlei.txt
+	用命令git add告诉Git，把文件添加到仓库：
+	$ git add yinlei.txt
+	
+	用命令git commit告诉Git，把文件提交到仓库：
+	$ git commit -m "wrote a yinlei file"
+	[master (root-commit) cb926e7] wrote a yinlei file
+	 1 file changed, 2 insertions(+)
+	 create mode 100644 yinlei.txt
+	 
+	(git commit命令 -m后面输入的是本次提交的说明) 
+	
+三、版本管理
+	运行git status命令查看当前状态
+	
+	运行git diff命令查看当前差异
+	
+	运行git log命令查看历史记录，后面跟--pretty=oneline可查看缩略记录
+	
+	运行git reset命令回退到历史版本，回退到上一个版本后面跟--hard HEAD^，上上个版本跟--hard HEAD^^，前100个版本后面跟--hard HEAD~100
+	
+	运行git reset亦可回退到未来版本，回退到未来特定版本后面跟--hard commit id，commit id可使用命令git reflog查看
+	
+	运行git add "filename" 将工作区(working directory)所有的修改放到版本库(Repository)的暂存区(stage)
+	
+	运行git commit -m "filelog" 将版本库(Repository)的暂存区(stage)提交到分支(master)
+	
+	运行git diff HEAD -- filename命令可以查看工作区和版本库里面最新版本的区别
+	
+	运行git checkout -- filename可以丢弃工作区的修改
+	
+	运行git reset HEAD filename可以把暂存区的修改撤销掉（unstage），重新放回工作区
+	
+	运行rm filename命令删除文件，git rm filename命名从版本库中删除文件，git checkout -- filename可恢复文件
+	
+四、远程仓库
+	Github网站远程托管，须有Github账号
+	
+	1、创建SSH Key，$ ssh-keygen -t rsa -C "youremail@example.com"
+	
+	2、登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+    然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+	
+	多个SSH Key对应多个电脑，即不同客户端都可推送至Github
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
