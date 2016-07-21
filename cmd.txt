@@ -71,7 +71,8 @@ Git 操作命令
 	多个SSH Key对应多个电脑，即不同客户端都可推送至Github
 	
 	
-	
+	从远程库克隆：
+	运行git clone git@github.com:yinlei940725/YinLeiWeb.git
 	
 	
 	
